@@ -78,9 +78,19 @@ def compute():
 if st.button("Apply SMART"):
     compute()
 def Example():
-    les_poids = [0.3, 0.2, 0.2, 0.3]
-    les_utilities = [[3, 4, 3, 5], [5, 3, 2, 4], [4, 3, 4, 3], [2, 2, 5, 2], [3, 5, 2, 4]]
-    directions = ['max', 'min', 'max', 'min']
+
+    les_poids = [0.4, 0.3, 0.2, 0.1]
+    les_utilities = [
+        [10000, 8, 7, 500],
+        [12000, 9, 8, 550],
+        [9500, 7, 6, 600],
+        [11000, 8, 7, 480],
+        [10500, 6, 8, 520],
+        [11500, 8, 7, 530],
+        [9000, 7, 9, 490],
+        [10200, 9, 6, 570]
+    ]
+    directions = ['min', 'max', 'max', 'min']
     st.session_state['CritCount'] = len(les_poids)
     st.session_state['AltCount'] = len(les_utilities)
     for i in range(len(les_poids)):
@@ -91,4 +101,3 @@ def Example():
             st.session_state[f'U{i}{j}'] = str(les_utilities[i][j])
 
 st.button("Example", on_click=Example)
-
