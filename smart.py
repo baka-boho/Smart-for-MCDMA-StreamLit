@@ -46,7 +46,7 @@ st.header("Input Criteria Weights")
 Crit_Grid = st.columns([1 for i in range(Crits)])
 
 st.header("Input Alternatives Utilities") 
-Alt_Grid = [st.columns([1 for i in range(Alts)]) for j in range(Alts)]
+Alt_Grid = [st.columns([1 for i in range(Alts)]) for j in range(Crits)]
 for i in range(Alts):
     for j in range(len(Crit_Grid)):
         with Alt_Grid[i][j]:
