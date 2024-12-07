@@ -103,3 +103,5 @@ def Example():
             st.session_state[f'U{i}{j}'] = str(les_utilities[i][j])
 
 st.button("Example", on_click=Example)
+
+# C:\Users\HP\AppData\Roaming\Python\Python313\Scripts\streamlit.exe run smart.py
