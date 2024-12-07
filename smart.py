@@ -39,16 +39,18 @@ Alts=st.number_input(label='$Alt Count$',max_value=10,min_value=3,key='AltCount'
 
 C=[0 for j in range(Crits)]
 Dir=['max' for j in range(Crits)]
-U=[[0 for j in range(Alts)] for i in range(Alts)]
+U=[[0 for j in range(Crits)] for i in range(Alts)]
 
 st.header("Input Criteria Weights") 
 
 Crit_Grid = st.columns([1 for i in range(Crits)])
 
 st.header("Input Alternatives Utilities") 
-Alt_Grid = [st.columns([1 for i in range(Alts)]) for j in range(Crits)]
+Alt_Grid = [st.columns([1 for i in range(Crits)]) for j in range(Alts)]
 for i in range(Alts):
-    for j in range(len(Crit_Grid)):
+    print("\n")
+    for j in range(Crits):
+        print(i,j)
         with Alt_Grid[i][j]:
             U[i][j] = st.text_input(f'Utility $A_{{ {i+1},{j+1} }}$', key=f'U{i}{j}')
 
